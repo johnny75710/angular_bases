@@ -16,4 +16,12 @@ En el html del componente hijo pondremos [propiedadAMandar] = "propiedadAMandar"
            En la etiqueta del componente hijo, ponemos (onNuevoAlgo) = metodoPadre( $event )
            En el .ts del padre mediante un método n este caso metodoPadre() trabajamos el evento del hijo ya en el padre.
 
-Servicios -> 
+Servicios -> Podemos trabajar los sercicios tanto de manera global como modular, lo usamos para trabajar con los datos de la
+             aplicación. 
+             Para crear un servicio usamos ng g s nombre.service.ts
+             En el módulo en el que se usa el servicio, importamos con providers el servicio
+             Populamos el servicio con los datos, por ejemplo una arreglo de nombre comidas
+             Importamos el servicio en un componente con constructor(private nombreServicio: NombreServicio)
+             Ahora en el componente, con un getComidas(): any{
+                return this.nombreServicio.comidas;
+             } 
