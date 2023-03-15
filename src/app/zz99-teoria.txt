@@ -1,0 +1,19 @@
+FormsModule -> Importamos en nuestro módulo el módulo de formularios.
+               Con (ngSubmit en la etiqueta form es un evento personalizado para formularios). al darle al botón de submit,
+               nos ejecuta el método especificado en la tarjeta form
+               
+               NgModel -> 2 way data binding
+
+[] -> Establecer valor
+() -> Emitir eventos
+
+@Input -> se usa para emitir propiedades de un componente padre a componentes hijos. Con @Input() propiedadAMandar
+En el html del componente hijo pondremos [propiedadAMandar] = "propiedadAMandar"
+
+@Output -> emite un evento desde el hijo hacia el padre. En el .ts del hijo hacemos   
+           @Output() onNuevoAlgo: EventEmitter<any> = new EventEmitter(); y emitimos el evento
+           ahora le pasamos el dato a emitir this.onNuevoAlgo.emit('loquesea')
+           En la etiqueta del componente hijo, ponemos (onNuevoAlgo) = metodoPadre( $event )
+           En el .ts del padre mediante un método n este caso metodoPadre() trabajamos el evento del hijo ya en el padre.
+
+Servicios -> 
