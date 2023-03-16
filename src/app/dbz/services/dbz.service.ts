@@ -6,7 +6,7 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class DbzService {
 
-  personajes: Personaje[] = [
+  private _personajes: Personaje[] = [
     {
       nombre: 'Capitana Marvel',
       poder: 40000
@@ -16,6 +16,13 @@ export class DbzService {
       poder: 3050
     }
   ]
+  
+  get personajes(): Personaje[]{
+    return [...this._personajes]
+  }
 
+  agregarPersonajes(personaje: Personaje){
+    this._personajes.push(personaje)
+  }
   constructor() { }
 }
